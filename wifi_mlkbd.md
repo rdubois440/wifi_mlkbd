@@ -11,7 +11,7 @@
 ##Et pour la connexion, utilisez le wifi.
 
 </p>  
-![Multiple keyboards for multiple languages](images/wifi_mlkbd/keyboards_stack.jpg)
+![Multiple keyboards for multiple languages](images/keyboards_stack.jpg)
 
 
 
@@ -78,7 +78,7 @@ making it possible to support any key combination
 
 
 ##Hardware Architecture - Arduino Yun
-![Multiple keyboards for multiple languages](images/wifi_mlkbd/wifi_mlkbd_sw_yun.jpg)
+![Multiple keyboards for multiple languages](images/wifi_mlkbd_sw_yun.jpg)
 For the prototype, I used an Arduino Yun. It has all the hardware in a single unit, and only needs one cable from the target PC for Power + USB HID emulation
 Pros: 
 Advantage is the flexibility. the linux part offers the Wifi Access Point.
@@ -90,7 +90,7 @@ Cost around 70 Euros
 Time to boot 90 seconds
 
 ##Hardware Architecture - ESP8266 and Sparksun Micropro 3.3V
-![Multiple keyboards for multiple languages](images/wifi_mlkbd/wifi_mlkbd_sw_esp8266.jpg)
+![Multiple keyboards for multiple languages](images/wifi_mlkbd_sw_esp8266.jpg)
 For distributing samples for testers, I created a small board with an ESP8266 for the Wifi Access Point, and an Sparkfun Pro Micro for the HID emulation on USB
 Single cable for powering the combo, and the USB HID
 Fast boot (less than 10 seconds)
@@ -98,14 +98,14 @@ Low cost - 8 euros for the Pro Micro, 2 euros for the ESP8266
 ESP8266 is powered from the 3.3 Volts provided by the Pro Micro on the "Raw" pin. Most articles will tell you to not do this, 
 as the ESP8266 cant take 250 mAmp in peak. But the experience shows thhat it works perfectly.
 
-![Combo board](images/wifi_mlkbd/wifi_mlkbd_bb.jpg)
+![Combo board](images/wifi_mlkbd_bb.jpg)
 
 ###Power Requirements
 ESP8266 is powered from the 3.3 Volts provided by the Pro Micro on the "Raw" pin. Most articles will tell you to not do this, 
 as the ESP8266 cant take 250 mAmp in peak. But the experience shows thhat it works perfectly. To be on the safe side, I added a 1000 microfarad capacitor on the line
 
-![Combo board](images/wifi_mlkbd/wifi_mlkbd_combo_02.jpg)
-![Combo board](images/wifi_mlkbd/wifi_mlkbd_combo_04.jpg)
+![Combo board](images/wifi_mlkbd_combo_02.jpg)
+![Combo board](images/wifi_mlkbd_combo_04.jpg)
 
 
 ##Schematic
