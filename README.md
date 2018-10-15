@@ -1,8 +1,6 @@
-/
 
-#Créez un clavier Wifi Multi Langues {align=center}
+#Créez un clavier Wifi Multi Langues 
 
-<p align="justify"> 
 
 ##Vous avez toujours rêvé d’avoir un vrai clavier multi langues, connecté en wifi ?
 
@@ -10,7 +8,6 @@
 
 ##Et pour la connexion, utilisez le wifi.
 
-</p>  
 ![Multiple keyboards for multiple languages](images/keyboards_stack.jpg)
 
 
@@ -21,9 +18,7 @@
 
 ```
 ##Todo
-\begin{center}
 Create a colorful native Android application
-\end{center}
 ->Pictures board only, connectivity<-
 Check power requirements - micro-pro over heating
 ```
