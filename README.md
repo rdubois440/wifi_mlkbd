@@ -132,8 +132,8 @@ The micropro receives the data from the ESP8266. All data is exchanged using RS2
 
 ###Arduino Sketch 
 
-#Installaton on the Android device
-Engable USB debugging on the phone. 
+#Installaton on Android device - Samsung J3 2016 - Android 5.1.1
+Enable USB debugging on the phone. 
 From the settings, Select About Phone ==> Software Information ==> Build Number
 Tap "Build Number" several times, until the message appears "You are now x steps away from enabling "Developer options"
 Back to the Settings menu, there is now a new "Developer option". Select it, and enable "USB Debugging"
@@ -148,15 +148,42 @@ Python 3.6.6
 Install the coreutils package for various tools
 pkg install corutils
 
-Create a bin directory, under the termux home directory
-cd /data/data/termux.com/files/home
-mkdir bin
+Create a home and a bin directory on the internal phone storage
+Rene
+Rene/bin
 
-Copy the file wifi_mlkbd.py to the new directory /data/data/termux.com/files/home/bin
+
+Copy the file wifi_mlkbd.py to the new directory /storage/sdcard0/Rene/bin
 for example with a usb cable and the command
+adb push wifi_mlkbd.py /storage/sdcard0/Rene/bin
+
+Create a shortcut
+cd $HOME/.shortcuts
+
+Create a file wifi_mlkbd.sh
+killall wifi_mlkbd
+sleep 1
+python /storage/sdcard0/Rene/bin/wifi_mlkbd.py
+
+Refresh the shortcuts icon on the home screen
 
 
-##Keyboard layouts 
+
+![Shortcut on the home screen](images/wifi_mlkbd_shortcut.jpg)
+
+#Supported Keyboard layouts 
+This is a work in progress.   
+At the moment, the Qwerty and Hebrew languages are supported
+Azerty Bepo Qwertz (Fr-CH) Esperanto and Amharique are the todo list
+
+#CJK - Chinese - Japanese - Korean Layouts   
+I miss information and exposure to these keyboards. I think there are different keyboards and input methods for each of these languages. Support is clearly minimal at the moment.    
+One thing that works (validated with Chinese and Japanese) is to use a standard Qwerty keyboard, and enter pinyin for the Chinese, or romaji for the japanese. 
+The Input system will handle this as a normal Qwerty keyboard, and offer the corresponging Han character for Chinese, or Katakana, Hiragana, or Kanji for japanese.
+
+
+
+
 
 
 ##Usage
@@ -164,7 +191,7 @@ for example with a usb cable and the command
 Connect the Combo board to a free port on the PC
 On the first connection to a windows PC, the pc will recognize the arduino HID emulator, and load the driver. Confirmed with a sound
 After a few seconds, the Combo will publish a wifi network AI-THINKER_xxxxxx. Connect the Android device to this network. this network is fully open at the moment.
-Start the program under termux    
+Start the program under termux (from the command line, or from a shortcut)
 python multi_lang_kbd.py    
 Select the desired keyboard layout on the PC    
 Select the same keyboard layout on the Android device    
@@ -172,11 +199,14 @@ Start typing !!
 
 Todo - Document changing layout on the android device
 
+![Shortcut on the home screen](images/wifi_mlkbd_curses.jpg)
 
-##Future developments
+#Adding a Keyboard Layout
+#Future developments
 
 #pdf conversion   
 ```
 pandoc -s -o wifi_mlkbd.pdf  -V geometry:"top=1cm, bottom=1cm, left=1cm, right=1cm" wifi_mlkbd.md
 ```
-
+#github
+https://github.com/rdubois440/wifi_mlkbd
